@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    @font-face {
+        font-family: Dosis-Regular;
+        src: url('/assets/fonts/Dosis-Regular.ttf');
+    }
+
+    @font-face {
+        font-family: Dosis-Light;
+        src: url('/assets/fonts/Dosis-Light.ttf');
+    }
+
+    @font-face {
+        font-family: Oswald;
+        src: url('/assets/fonts/Oswald-Medium.ttf');
+    }
+
+    body {
+        font-family: Dosis-Light, Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .category-header {
+        width: 100%;
+        border-top: 2px solid black;
+        border-bottom: 2px solid black;
+        text-align: center;
+        padding: 5px 0;
+    }
+
+    .disclaimer-header {
+        width: 100%;
+        text-align: center;
+        padding: 5px 0;
+    }
+
+    h1,
+    h3,
+    h4 {
+        line-height: 0.5;
+        padding: 0;
+        margin: .5em;
+    }
+
+    .category-header>h4 {
+        font-family: Dosis-Light;
+        font-size: 80%;
+    }
+
+    .category-header>h3 {
+        font-family: Dosis-Light;
+        font-size: 80%;
+    }
+
+    .category-header>h1 {
+        font-size: 1.5em;
+        font-family: Oswald;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+    }
+
+    p {
+        text-align: center;
+    }
+
+    table {
+        border-spacing: 0;
+    }
+
+    td {
+        padding: 3pt 10px;
+        font-size: 10pt;
+    }
+
+    .item-name {
+        width: 580px;
+        text-transform: uppercase;
+        font-family: Dosis-Regular;
+    }
+
+    .item-desc {
+        font-size: 9pt;
+        padding-top: 0;
+        color: #444444;
+    }
+
+    .price-column {
+        width: 60px;
+        text-align: right;
+        font-family: Dosis-Regular;
+        border-left: 2px solid black;
+    }
+
+    img.info {
+        width: 20px;
+        padding: 0;
+    }
+
+    img.info-2 {
+        width: 34px;
+    }
+
+    .page-break {
+        page-break-after: always;
+    }
+
+    .page-break-before {
+        page-break-before: always;
+    }
+
+    .page-break-avoid {
+        page-break-before: avoid;
+    }
+
+    table.modifiers {
+        width: 100%;
+        font-size: 55%;
+    }
+
+    .mt-2 {
+        margin-top: 1em;
+    }
+
+    .mb-4 {
+        margin-bottom: 1em;
+    }
+</style>
+
+<body>
+    <% 
+    let accumulator = 0 
+    let maxItemsPerPage = 9
+    %>
+
+    <% if (categories.length> 0) { %>
+        <% categories.forEach((category,i)=> {
+            accumulator += category.items.length
+            %>
+
+
+            <div class="category-header <% if(accumulator >= maxItemsPerPage){ %>page-break-before<% accumulator = 0}%>">
+                <% if (category.parent==='' ) { %>
+                    <h4>Menü</h4>
+                    <% } else{ %>
+                        <h4>
+                            <%= category.parent %>
+                        </h4>
+                        <%} %>
+                            <h1>
+                                <%= category.name %>
+                            </h1>
+                            <% if (category.description !=='' ) { %>
+                                <h4>
+                                    <%= category.description %>
+                                </h4>
+                                <%}%>
+            </div>
+            <div class="page-break-avoid"></div>
+            <table>
+                <% category.items.forEach(item=> {%>
+                    <tr class="page-break-avoid">
+                        <td class="item-name">
+                            <%= item.name %>
+                                <sup class="info">
+                                    <%- item.modifiers %>
+                                </sup>
+                        </td>
+                        <td class="price-column">
+                            <%= item.price %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="item-desc">
+                            <%= item.description %>
+                        </td>
+                        <td class="price-column"></td>
+                    </tr>
+                    <% });%>
+            </table>
+
+            <% });%>
+                <% }%>
+
+
+                    <div class="page-break-before"></div>
+                    <div class="disclaimer-header">
+                        <h1>Mami Camilla</h1>
+                    </div>
+                    <!--Mods-->
+                    <table class="modifiers  mt-2">
+                        <tr>
+                            <td>1 = mit Farbstoff</td>
+                            <td>2 = mit Konservierungsstoffen</td>
+                            <td>3 = mit Antioxidationsmitteln</td>
+                        </tr>
+                        <td>4 = mit Geschmacksverstärker</td>
+                        <td>5 = geschwefelt</td>
+                        <td>6 = geschwärzt</td>
+                        </tr>
+                        </tr>
+                        <td>7 = mit Phosphat</td>
+                        <td>8 = mit Süßungsmittel</td>
+                        <td>9 = enthält eine Phenylalaninquelle</td>
+                        </tr>
+                        </tr>
+                        <td>10 = gewachst</td>
+                        <td>11 = mit Nitritpökelsalz</td>
+                        <td>12 = Tartrazin</td>
+                        </tr>
+                        </tr>
+                        <td>13 = koffeinhaltig</td>
+                        <td>14 = chininhaltig</td>
+                        <td>15 = genetisch verändert</td>
+                        </tr>
+                        </tr>
+                        <td>16 = mit Milcheiweiß</td>
+                        <td>17 = mit Taurin</td>
+                        <td>18 = alkoholhaltig</td>
+                        </tr>
+                        </tr>
+                        <td>19 = Laktose</td>
+                        <td>20 = Säuerungsmittel</td>
+                        <td>15 = Unter Schutzatmosphäre verpackt</td>
+                        </tr>
+                    </table>
+                    <!--Mods 2-->
+                    <table class="modifiers mt-2">
+                        <tr>
+                            <td>a = glutenhaltiges Getreide</td>
+                            <td>a1 = Weizen</td>
+                            <td>a2 = Roggen</td>
+                        </tr>
+                        <tr>
+                            <td>a4 = Hafer</td>
+                            <td>a5 = Kamut oder Hybridstämme</td>
+                            <td>b = Krebstiere</td>
+                        </tr>
+                        <tr>
+                            <td>c = Eier und Eierzeugnisse</td>
+                            <td>d = Fisch und Fischerzeugnisse</td>
+                            <td>e = Erdnüsse und<br> Erdnusserzeugnisse</td>
+                        </tr>
+                        <tr>
+                            <td>f = Sojabohnen und<br> Sojabohnenerzeugnisse
+                            </td>
+                            <td>g = Milch und Milcherzeugnisse</td>
+                            <td>h = Schalenfrüchte und<br> Schalenfruchterzeugnisse
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>h1 = Mandeln</td>
+                            <td>h2 = Haselnüsse</td>
+                            <td>h3 = Walnüsse</td>
+                        </tr>
+                        <tr>
+                            <td>h4 = Cashewnüsse</td>
+                            <td>h5 = Pecanüsse</td>
+                            <td>h6 = Paranüsse</td>
+                        </tr>
+                        <tr>
+                            <td>h7 = Pistazien</td>
+                            <td>h8 = Macadamia- oder<br> Queenslandnüsse
+                            </td>
+                            <td>i = Sellerie und Sellerieerzeugnisse</td>
+                        </tr>
+                        <tr>
+                            <td>k = Senf und Senferzeugnisse</td>
+                            <td>l = Sesamsamen und<br> Sesamerzeugnisse
+                            </td>
+                            <td>m = Schwefeldioxid und Sulfite</td>
+                        </tr>
+                    </table>
+                    <table class="modifiers mt-2 mb-4">
+                        <tr>
+                            <td><img class="info-2" src="/assets/img/scharf.svg" /> = Scharf</td>
+                            <td><img class="info-2" src="/assets/img/vegan.svg" /> = Vegan</td>
+                            <td><img class="info-2" src="/assets/img/veggie.svg" /> = Veggie</td>
+                        </tr>
+                        <tr>
+                            <td><img class="info-2" src="/assets/img/regional.svg" /> = Regional</td>
+                            <td colspan="2"><img class="info-2" src="/assets/img/bio.svg" /> = Bio</td>
+                        </tr>
+                    </table>
+                    <p>
+                        Alle Preise in Euro inkl. MwSt. und Bedienung <br> Bei Fragen wenden Sie sich bitte an das
+                        Servicepersonal.
+                    </p>
+</body>
+
+</html>

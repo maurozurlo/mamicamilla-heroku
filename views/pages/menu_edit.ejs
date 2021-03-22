@@ -1,0 +1,28 @@
+<%- include('../partials/modals/category_modal') %>
+<%- include('../partials/modals/item_modal') %>
+<%- include('../partials/modals/item_existing_modal') %>
+<div class="columns">
+    <div class="column">
+        <h3 class="title is-3">Categories</h3>
+        <ul id="categories-container"></ul>
+    </div>
+    <div class="column">
+        <h3 class="title is-3">Dishes / drinks</h3>
+        <div id="menu-reminder" class="notification is-primary is-light">
+            Please click on the name of a category to view the items it contains
+        </div>
+        <ul id="items-container">
+        </ul>
+        <button id="button-existing-item" class="button is-info mt-3" category="" onclick="openModal('itemExistingModal',InitializeAddItem)">Add existing dish / drink</button>
+        <button id="button-add-item" class="button is-primary mt-3" category="" onclick="openModal('itemCreateModal',InitializeCreateItem)">Add new dish / drink</button>
+    </div>
+</div>
+<script src="/js/pureselect.min.js"></script>
+<script src="/js/menu/category_modal.js"></script>
+<script src="/js/menu/item_modal.js"></script>
+<script src="/js/lodash.js"></script>
+<script src="/js/menu/menu_view.js"></script>
+<!--<link rel="stylesheet" href="/css/bulma-collapsible.min.css">-->
+<!--<script src="/js/bulma-collapsible.min.js"></script>-->
+<script src="/js/sortable.js"></script>
+<script>gatherMenu()</script>

@@ -1,0 +1,52 @@
+
+<%
+const slash = '/admin/'
+const sections = [
+  {
+    name: 'General', children: [
+      { href: 'dashboard', label: 'Dashboard' }
+    ]
+  },
+  {
+    name: 'Bookings', children: [
+      { href: 'bookings', label: 'View' },
+      { href: 'bookings/create', label: 'Create' },
+      { href: 'bookings/configure', label: 'Configure' }
+    ]
+  },
+  {
+    name: 'Menu', children: [
+      { href: 'menu', label: 'Edit' },
+      { href: 'menu/pdf', label: 'PDF' }
+    ]
+  },
+  {
+    name: 'Administration', children: [
+      { href: 'staff', label: 'Staff' },
+      { href: 'logs', label: 'Logs' }
+    ]
+  },
+  {
+    name: 'Profile', children: [
+      //{ href: 'profile', label: 'Profile' },
+      { href: 'logout', label: 'Close Session' }
+    ]
+  },
+]
+%>
+
+<div class="column is-3 ">
+  <aside class="menu is-hidden-mobile">
+    <% sections.forEach((section) => {%>
+      <p class="menu-label"><%= section.name %></p>
+      <ul class="menu-list">
+      <% if (section.children && section.children.length > 0) { %>
+        <% section.children.forEach((child) => {%>
+          <li><a
+            <% if (`${slash}${child.href}` === url) { %> class="is-active"<% } %>
+            href="<%= `${slash}${child.href}` %>"><%= child.label  %></a></li>
+          <%})%>
+      </ul>
+      <%}})%>
+  </aside>
+</div>

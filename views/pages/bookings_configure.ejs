@@ -1,0 +1,84 @@
+<div class="container">
+  <h1 class="title">
+    Configure Bookings
+  </h1>
+  <p>
+    You can configure specific details that will change the behavior of the form on the public landing page. It will also change the displayed opening hours at the bottom of the page.
+  </p>
+</div>
+
+<div class="content mt-5">
+  <h3 class="title">Opening hours</h3>
+  <p>You can configure specific opening hours for bookings. Bear in mind that the system will only allow to bookings until half an hour before the closing time</p>
+
+
+  <% const daysOpeningHours=['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']
+    daysOpeningHours.forEach((day,i)=> {%>
+
+    <div class="columns mb-0 is-vcentered">
+      <div class="column pl-0">
+        <h5 class="title mb-0">
+          <%= day %>
+        </h5>
+      </div>
+      <div class="column ">
+        <div class="field">
+          <label class="label">Opening</label>
+          <div class="select">
+            <select id="open-time-day-<%= i %>">
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="field">
+          <label class="label">Closing</label>
+          <div class="select">
+            <select id="close-time-day-<%= i %>">
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% })%>
+</div>
+
+<hr>
+<div class="content mt-5">
+  <h3 class="title">National Holidays / Closing days</h3>
+  <p>You can enter any days you want people to be unable to book a table. Format is DD-MM.
+  </p>
+  <p>You can specify multiple dates separating them with a ';' character</p>
+  <p>For example, to prevent booking on February 13 and August 15 you should write '13-02;15-08'</p>
+
+  <div class="field">
+    <label class="label">Dates</label>
+    <div class="control">
+      <input class="input" type="text" placeholder="Enter days..." id="booking-holidays">
+    </div>
+  </div>
+</div>
+<hr>
+<div class="content mt-5">
+  <h3 class="title">Close booking</h3>
+  <p>You can close bookings in order to disable the form and prevent any new bookings</p>
+  <div class="field">
+    <label class="label">Can make new bookings</label>
+    <div class="select">
+      <select id="booking-enabled">
+        <option value="0">No</option>
+        <option value="1" selected>Yes</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<div style="display: none;" id="decoy-values"><%=booking_settings%></div>
+
+<button class="button is-success" id="button-submit-settings" onclick="updateSettings(event)">Save settings</button>
+<script src="/js/bookings/bookings_settings.js"></script>
+<script>
+  updateSelects()
+  loadSettings()
+</script>

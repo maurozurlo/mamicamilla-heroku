@@ -1,0 +1,20 @@
+<link href='/js/bookings/main.min.css' rel='stylesheet' />
+<script src='/js/bookings/main.min.js'></script>
+<script src="/js/bookings/bookings_view.js"></script>
+
+<article class="notification is-info is-light">
+  <p>Today is <%- date %> and we have <%- num %> booking(s)</p>
+  <div class="columns mt-2">
+    <span class="tag  is-dark event-active">
+      Bookings marked in blue are active
+    </span>
+    <span class="tag  is-dark event-cancelled ml-2">
+      Bookings marked in red have been cancelled
+    </span>
+  </div>
+
+</article>
+
+<div class="container">
+  <div id='calendar'></div>
+</div>

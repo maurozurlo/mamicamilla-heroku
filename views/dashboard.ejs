@@ -1,0 +1,13 @@
+<script type="text/javascript" src="/js/bulma.js"></script>
+<script type="text/javascript" src="/js/global.js"></script>
+<link rel="stylesheet" href="/css/admin.css">
+<%- include("./partials/admin_nav_top.ejs"); %>
+    <div class="container is-primary">
+        <div class="columns">
+            <%- include('./partials/admin_nav_side') %>
+                <div class="column is-9">
+                    <%- include('partials/admin_breadcrumbs') %>
+                        <%- include(partial) %>
+                </div>
+        </div>
+    </div>

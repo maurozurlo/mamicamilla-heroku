@@ -1,0 +1,17 @@
+<nav class="breadcrumb" aria-label="breadcrumbs">
+  <ul>
+    <% if(breadcrumbs){ %>
+      <% for(var i=0; i<breadcrumbs.length; i++){ %>
+        <% if(breadcrumbs.url === null){ %>
+          <li class="is-active"><a class="breadcrumb-item active" aria-current="page">
+              <%= breadcrumbs[i].name %>
+            </a></li>
+          <%} else {%>
+            <li><a href="<%= breadcrumbs[i].url %>">
+                <%= breadcrumbs[i].name %>
+              </a></li>
+            <% } %>
+              <% } %>
+                <% } %>
+  </ul>
+</nav>

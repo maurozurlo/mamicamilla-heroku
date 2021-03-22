@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<g>
+
+		<linearGradient id="XMLID_4_" gradientUnits="userSpaceOnUse" x1="128.2313" y1="403.4845" x2="334.8766" y2="403.4845" gradientTransform="matrix(0.9595 -0.2818 -0.2818 -0.9595 120.4142 702.7348)">
+		<stop offset="0" style="stop-color:#98C335"/>
+		<stop offset="1" style="stop-color:#81AE35"/>
+	</linearGradient>
+	<path id="XMLID_2_" style="fill:url(#XMLID_4_);" d="M130.166,213.291c-0.682-43.83-3.344-89.788-2.721-89.971   c0.807,0.44,26.771,10.425,68.723,33.326c41.145,22.46,98.9,57.653,127.094,91.369c45.939,54.922,33.67,110.007-6.243,133.248   c-23.264-79.195-68.259-103.233-128.794-164.028c29.652,61.738,81.534,111.527,86.648,175.054   c-57.436-4.127-116.002-28.244-131.833-68.301C133.842,299.595,132.903,257.195,130.166,213.291z"/>
+
+		<radialGradient id="XMLID_5_" cx="-7.5506" cy="785.705" r="87.5382" gradientTransform="matrix(0.717 -0.697 -2.6029 -2.6771 2305.0134 2324.8145)" gradientUnits="userSpaceOnUse">
+		<stop offset="0" style="stop-color:#FFFFFF"/>
+		<stop offset="1" style="stop-color:#FFFFFF;stop-opacity:0"/>
+	</radialGradient>
+	<path id="XMLID_1_" style="opacity:0.4;fill:url(#XMLID_5_);enable-background:new    ;" d="M323.886,247.833   c-28.194-33.716-86.132-69.533-127.094-91.369c-42.575-22.718-68.54-32.703-68.723-33.326c0,0,0,0,0.183,0.624   s0.99,1.064,1.173,1.688c18.661,24.323,242.215,121.227,188.841,255.449C357.556,357.84,369.824,302.754,323.886,247.833z"/>
+</g>
+</svg>

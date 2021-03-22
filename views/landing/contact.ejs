@@ -1,0 +1,83 @@
+<div class="container is-max-desktop text-container has-text-centered">
+  <h1 class="is-georgia title has-letter-spacing">Contact <span class="is-camilla-green">us</span></h1>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui impedit animi, quia debitis reprehenderit
+    repellendus fuga laborum voluptatum nobis, repellat voluptatem natus ipsam, nulla sunt! Soluta, similique?
+    Libero, consequuntur</p>
+    <button class="button is-camilla-button mt-4">
+      Book a Table
+    </button>
+</div>
+
+
+<div class="columns">
+  <div class="column">
+    <div class="text-container">
+      <h2 class="is-georgia title has-letter-spacing">Address: <span class="is-camilla-green is-smaller-text">Via via via 14, BERLIN</span></h2>
+      <h2 class="is-georgia title has-letter-spacing">Email: <span class="is-camilla-green is-smaller-text">info@mamicamilla.de</span></h2>
+      <h2 class="is-georgia title has-letter-spacing">WhatsApp: <span class="is-camilla-green is-smaller-text">13233</span></h2>
+    </div>
+  </div>
+  <div class="column">
+    <div class="p-5">
+      <img src="/assets/img/01.jpg" alt="pizza">
+    </div>
+  </div>
+</div>
+
+<div class="container is-max-desktop mb-5">
+  <div class="text-container has-text-centered">
+    <h1 class="is-georgia title has-letter-spacing">Get in <span class="is-camilla-green">Touch</span></h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui impedit animi, quia debitis reprehenderit
+      repellendus fuga laborum voluptatum nobis, repellat voluptatem natus ipsam, nulla sunt! Soluta, similique?
+      Libero, consequuntur magni.</p>
+  </div>
+</div>
+
+<div class="container is-max-desktop">
+  <form class="is-camilla-form">
+        <!--name-->
+        <div class="columns">
+          <div class="column px-sm-0">
+            <div class="field">
+              <label class="label">Name</label>
+              <div class="control">
+                <input class="input" onchange="checkIfEmpty(this,'Please enter your name')" type="text" id="contact-name">
+              </div>
+            </div>
+          </div>
+          <div class="column pl-0 px-sm-0">
+            <div class="field">
+              <label class="label">Email address</label>
+              <div class="control">
+                <input class="input" onchange="checkIfNotEmail(this)" type="text" id="contact-email">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="columns">
+          <div class="column px-sm-0">
+            <!--Comments-->
+            <div class="field">
+              <label class="label">Message</label>
+              <div class="control">
+                <textarea onchange="checkIfEmpty(this,'Please enter your message')" class="textarea" placeholder="" rows="3" id="contact-message"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="columns is-centered">
+          <div class="column is-half is-flex is-flex-direction-column is-align-items-center is-justify-content-center">
+            <!--Captcha-->
+            <div class="h-captcha" data-sitekey="<%= hcaptcha %>" data-callback="correctCaptcha"></div>
+            <!--Submit-->
+            <button class="button is-camilla-button is-fullwidth mt-4" id="contact-submit" onclick="sendContact(event)">
+              Submit
+            </button>
+          </div>
+        </div>
+  </form>
+</div>
+<%- include('../partials/modals/landing_modal') %>
+<script src="https://hcaptcha.com/1/api.js" async defer></script>

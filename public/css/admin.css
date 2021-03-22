@@ -1,0 +1,233 @@
+html, body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  height: 100%;
+}
+
+nav.navbar {
+  border-top: 4px solid #276cda;
+  margin-bottom: 1rem;
+}
+.navbar-item.brand-text {
+  font-weight: 300;
+}
+.navbar-item, .navbar-link {
+  font-size: 14px;
+  font-weight: 700;
+}
+.columns {
+  width: 100%;
+  height: 100%;
+  margin-left: 0;
+}
+.menu-label {
+  color: #8F99A3;
+  letter-spacing: 1.3;
+  font-weight: 700;
+}
+.menu-list a {
+  color: #0F1D38;
+  font-size: 14px;
+  font-weight: 700;
+}
+.menu-list a:hover {
+  background-color: transparent;
+  color: #276cda;
+}
+.menu-list a.is-active {
+  background-color: transparent;
+  color: #276cda;
+  font-weight: 700;
+}
+.card {
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.18);
+  margin-bottom: 2rem;
+}
+.card-header-title {
+  color: #8F99A3;
+  font-weight: 400;
+}
+.info-tiles {
+  margin: 1rem 0;
+}
+.info-tiles .subtitle {
+  font-weight: 300;
+  color: #8F99A3;
+}
+.hero.welcome.is-info {
+  background: #36D1DC;
+  background: -webkit-linear-gradient(to right, #5B86E5, #36D1DC);
+  background: linear-gradient(to right, #5B86E5, #36D1DC);
+}
+.hero.welcome .title, .hero.welcome .subtitle {
+  color: hsl(192, 17%, 99%);
+}
+.card .content {
+  font-size: 14px;
+}
+.card-footer-item {
+  font-size: 14px;
+  font-weight: 700;
+  color: #8F99A3;
+}
+.card-table .table {
+  margin-bottom: 0;
+}
+.events-card .card-table {
+  max-height: 250px;
+  overflow-y: scroll;
+}
+
+
+.select-wrapper {
+  margin: auto;
+  max-width: 600px;
+  width: calc(100% - 40px);
+}
+
+.select-pure__select {
+  align-items: center;
+  background: #f9f9f8;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  box-sizing: border-box;
+  color: #363b3e;
+  cursor: pointer;
+  display: flex;
+  font-size: 16px;
+  font-weight: 500;
+  justify-content: left;
+  min-height: 44px;
+  padding: 5px 10px;
+  position: relative;
+  transition: 0.2s;
+  width: 100%;
+}
+
+.select-pure__options {
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  box-sizing: border-box;
+  color: #363b3e;
+  display: none;
+  left: 0;
+  max-height: 221px;
+  overflow-y: scroll;
+  position: absolute;
+  top: 50px;
+  width: 100%;
+  z-index: 5;
+}
+
+.select-pure__select--opened .select-pure__options {
+  display: block;
+}
+
+.select-pure__option {
+  background: #fff;
+  border-bottom: 1px solid #e4e4e4;
+  box-sizing: border-box;
+  height: 44px;
+  line-height: 25px;
+  padding: 10px;
+}
+
+.select-pure__option--disabled {
+  color: #e4e4e4;
+}
+
+.select-pure__option--selected {
+  color: #e4e4e4;
+  cursor: initial;
+  pointer-events: none;
+}
+
+.select-pure__option--hidden {
+  display: none;
+}
+
+.select-pure__selected-label {
+  align-items: 'center';
+  background: #5e6264;
+  border-radius: 4px;
+  color: #fff;
+  cursor: initial;
+  display: inline-flex;
+  justify-content: 'center';
+  margin: 5px 10px 5px 0;
+  padding: 3px 7px;
+}
+
+.select-pure__selected-label:last-of-type {
+  margin-right: 0;
+}
+
+.select-pure__selected-label i {
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 7px;
+}
+
+.select-pure__selected-label img {
+  cursor: pointer;
+  display: inline-block;
+  height: 14px;
+  margin-left: 7px;
+  width: 14px;
+}
+
+.select-pure__selected-label i:hover {
+  color: #e4e4e4;
+}
+
+.select-pure__autocomplete {
+  background: #f9f9f8;
+  border-bottom: 1px solid #e4e4e4;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  box-sizing: border-box;
+  font-size: 16px;
+  outline: none;
+  padding: 10px;
+  width: 100%;
+}
+
+.select-pure__placeholder--hidden {
+  display: none;
+}
+
+#the-canvas{
+  display: none;
+  width: 100%;
+  border-radius: 3px;
+  margin-top: 1em;
+  box-shadow: 1px 1px 14px 0px #00000033;
+}
+
+.is-capped-text{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+
+.event-camilla{
+  color: white !important;
+  transition: .3s;
+}
+.event-camilla:hover{
+filter: brightness(1.2)
+}
+
+.event-cancelled{
+  background-color: #e02e19 !important;
+  border-color: #e02e19 !important;
+}
+
+.event-active{
+  background-color: #3788d8 !important;
+}

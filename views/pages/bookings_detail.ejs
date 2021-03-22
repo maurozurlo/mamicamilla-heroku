@@ -1,0 +1,134 @@
+<form>
+  <div class="column">
+    <div class="columns">
+      <div class="column pl-0">
+        <div class="field">
+          <label class="label">Internal ID</label>
+          <div class="control">
+            <input class="input" type="text" id="booking-id" value="<%- id %>" disabled>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="field">
+          <label class="label">Has booked before</label>
+          <div class="control">
+            <input class="input" type="text" id="booking-is-recurring" value="<%- Boolean(isRecurring) ? 'Yes': 'No' %>" disabled>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="content">
+      <!--fname/lname-->
+      <div class="columns">
+        <div class="column pl-0">
+          <div class="field">
+            <label class="label">First name</label>
+            <div class="control">
+              <input class="input" type="text" value='<%- fname %>' id="booking-fname">
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="field">
+            <label class="label">Last name</label>
+            <div class="control">
+              <input class="input" type="text" value='<%- lname %>' id="booking-lname">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--phone/guests-->
+      <div class="columns">
+        <div class="column pl-0">
+          <div class="field">
+            <label class="label">Phone</label>
+            <div class="control">
+              <input class="input" type="text" value='<%- phone %>' placeholder="i.e +49 30 901820" id="booking-phone">
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="field">
+            <label class="label">Number of guests</label>
+            <div class="select is-fullwidth">
+              <select id="booking-guests">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="-1">6 or more</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--date/time-->
+      <div class="columns">
+        <div class="column pl-0">
+          <div class="field">
+            <label class="label">Date</label>
+            <div class="control">
+              <input class="input" type="date"  id="booking-date">
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="field">
+            <label class="label">Time</label>
+            <div class="select is-fullwidth">
+              <select id="booking-time">
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Email-->
+      <div class="field">
+        <label class="label">Email Address</label>
+        <div class="control">
+          <input class="input" type="email" value='<%- email %>' id="booking-email">
+        </div>
+      </div>
+      <!--Comments-->
+      <div class="field">
+        <label class="label">Comments <small>(optional)</small></label>
+        <div class="control">
+          <textarea class="textarea"
+            placeholder="Any special request you have, we're here for you..." rows="3" id="booking-comments"><%- comments %></textarea>
+        </div>
+      </div>
+
+        <div  style="display: none;" id="cancelled-booking" class="notification is-danger">
+          This booking has been cancelled
+        </div>
+
+
+
+      <!--Submit-->
+      <div class="buttons">
+        <button class="button is-danger" id="booking-cancel" onclick="cancelBooking(event)">
+          Cancel booking
+        </button>
+        <button class="button is-warning" id="booking-reactivate" onclick="reactivateBooking(event)">
+          Reactivate booking
+        </button>
+        <button class="button is-success" id="booking-submit" onclick="updateBooking(event)">
+          Update booking
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div style="display: none;">
+    <span id="decoy-date"><%-date%></span>
+    <span id="decoy-guests"><%-guests%></span>
+    <span id="decoy-time"><%-time%></span>
+    <div id="booking-status"><%-isCancelled%></div>
+  </div>
+</form>
+<script src="/js/bookings/bookings_admin.js"></script>
+<script>
+  updateFromDecoys()
+</script>

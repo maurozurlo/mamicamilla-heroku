@@ -1,0 +1,252 @@
+<style>
+  @font-face {
+    font-family: Dosis-Regular;
+    src: url('/assets/fonts/Dosis-Regular.ttf');
+  }
+
+  @font-face {
+    font-family: Dosis-Light;
+    src: url('/assets/fonts/Dosis-Light.ttf');
+  }
+
+  @font-face {
+    font-family: Oswald;
+    src: url('/assets/fonts/Oswald-Medium.ttf');
+  }
+
+  .category-header {
+    width: 100%;
+    border-top: 2px solid var(--camilla-grey);
+    border-bottom: 2px solid var(--camilla-grey);
+    text-align: center;
+    padding: 5px 0;
+  }
+
+  .disclaimer-header {
+    width: 100%;
+    text-align: center;
+    padding: 5px 0;
+  }
+
+  h1,
+  h3,
+  h4 {
+    padding: 0;
+    margin: 0;
+  }
+
+  h4 {
+    font-family: Dosis-Light;
+    font-size: 2em;
+  }
+
+  .category-header>h3 {
+    font-family: Dosis-Light;
+  }
+
+
+  .category-header>h1 {
+    font-size: 2.5em;
+    font-family: Oswald;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+  }
+
+  table {
+    border-spacing: 0;
+    width: 100%;
+    margin-bottom: 2em;
+  }
+
+  td {
+    padding: 3pt 10px;
+  }
+
+  .item-name {
+    width: 85%;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    font-family: Dosis-Regular;
+  }
+
+  .item-desc {
+    font-size: 1em;
+    padding-top: 0;
+    color: #444444;
+  }
+
+  .price-column {
+    font-size: 1.2em;
+    text-align: right;
+    font-family: Dosis-Regular;
+    border-left: 2px solid var(--camilla-grey);
+  }
+
+  img.info {
+    width: 20px;
+    padding: 0;
+  }
+
+  img.info-2 {
+    width: 34px;
+  }
+
+  .mt-2 {
+    margin-top: 2em;
+  }
+
+  .mb-4 {
+    margin-bottom: 1em;
+  }
+
+  .modifiers{
+    columns: 3
+  }
+
+  @media screen and (max-width: 414px) {
+    .modifiers{
+    columns: 1
+  }
+  }
+</style>
+
+<div class="container">
+  <% if (categories.length> 0) { %>
+    <% categories.forEach((category,i)=> {%>
+      <div class="category-header">
+        <% if (category.parent==='' ) { %>
+          <h4>Menü</h4>
+          <% } else{ %>
+            <h4>
+              <%= category.parent %>
+            </h4>
+            <%} %>
+              <h1>
+                <%= category.name %>
+              </h1>
+              <% if (category.description !=='' ) { %>
+                <h4>
+                  <%= category.description %>
+                </h4>
+                <%}%>
+      </div>
+      <table>
+        <% category.items.forEach(item=> {%>
+          <tr>
+            <td class="item-name">
+              <%= item.name %>
+                <sup class="info">
+                  <%- item.modifiers %>
+                </sup>
+            </td>
+            <td class="price-column">
+              <%= item.price %>
+            </td>
+          </tr>
+          <tr>
+            <td class="item-desc">
+              <%= item.description %>
+            </td>
+            <td class="price-column"></td>
+          </tr>
+          <% });%>
+      </table>
+
+      <% });%>
+        <% }%>
+</div>
+<hr>
+<div class="container px-4">
+  <h4>References</h4>
+  <!--Mods-->
+  <div class="modifiers">
+    <p>1 = mit Farbstoff</p>
+    <p>2 = mit Konservierungsstoffen</p>
+    <p>3 = mit Antioxidationsmitteln</p>
+    <p>4 = mit Geschmacksverstärker</p>
+    <p>5 = geschwefelt</p>
+    <p>6 = geschwärzt</p>
+    <p>7 = mit Phosphat</p>
+    <p>8 = mit Süßungsmittel</p>
+    <p>9 = enthält eine Phenylalaninquelle</p>
+    <p>10 = gewachst</p>
+    <p>11 = mit Nitritpökelsalz</p>
+    <p>12 = Tartrazin</p>
+    <p>13 = koffeinhaltig</p>
+    <p>14 = chininhaltig</p>
+    <p>15 = genetisch verändert</p>
+    <p>16 = mit Milcheiweiß</p>
+    <p>17 = mit Taurin</p>
+    <p>18 = alkoholhaltig</p>
+    <p>19 = Laktose</p>
+    <p>20 = Säuerungsmittel</p>
+    <p>15 = Unter Schutzatmosphäre verpackt</p>
+  </div>
+<hr>
+  <div class="modifiers mt-2">
+
+    <p>a = glutenhaltiges Getreide</p>
+    <p>a1 = Weizen</p>
+    <p>a2 = Roggen</p>
+
+
+    <p>a4 = Hafer</p>
+    <p>a5 = Kamut oder Hybridstämme</p>
+    <p>b = Krebstiere</p>
+
+
+    <p>c = Eier und Eierzeugnisse</p>
+    <p>d = Fisch und Fischerzeugnisse</p>
+    <p>e = Erdnüsse und<br> Erdnusserzeugnisse</p>
+
+
+    <p>f = Sojabohnen und<br>
+      Sojabohnenerzeugnisse</p>
+    <p>g = Milch und Milcherzeugnisse</p>
+    <p>h = Schalenfrüchte und<br>
+      Schalenfruchterzeugnisse</p>
+
+
+    <p>h1 = Mandeln</p>
+    <p>h2 = Haselnüsse</p>
+    <p>h3 = Walnüsse</p>
+
+
+    <p>h4 = Cashewnüsse</p>
+    <p>h5 = Pecanüsse</p>
+    <p>h6 = Paranüsse</p>
+
+
+    <p>h7 = Pistazien</p>
+    <p>h8 = Macadamia- oder Queenslandnüsse</p>
+    <p>i = Sellerie und Sellerieerzeugnisse</p>
+
+
+    <p>k = Senf und Senferzeugnisse</p>
+    <p>l = Sesamsamen und
+      Sesamerzeugnisse</p>
+    <p>m = Schwefeldioxid und Sulfite</p>
+
+    </div>
+    <hr>
+<div class="modifiers mt-2 mb-4">
+
+    <p><img class="info-2" src="/assets/img/scharf.svg" /> = Scharf</p>
+    <p><img class="info-2" src="/assets/img/vegan.svg" /> = Vegan</p>
+    <p><img class="info-2" src="/assets/img/veggie.svg" /> = Veggie</p>
+
+
+    <p><img class="info-2" src="/assets/img/regional.svg" /> = Regional</p>
+    <p><img class="info-2" src="/assets/img/bio.svg" /> = Bio</p>
+</div>
+
+<p class="has-text-centered">
+  Alle Preise in Euro inkl. MwSt. und Bedienung <br>
+    Bei Fragen wenden Sie sich bitte an das Servicepersonal.
+</p>
+<div class="has-text-centered">
+  <a href='/download/Menu.pdf' class="button is-camilla-button mt-4">
+    Download Menu
+  </a>
+</div>
+</div>

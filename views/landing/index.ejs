@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="/css/landing.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+  rel="stylesheet">
+
+<nav class="navbar is-fixed-top">
+  <div class="is-main-header is-camilla-white-background">
+    <button class="button fixed-48px-width" onclick="toggleMainNav()">
+      <i id="burger-btn-icon" class="fas fa-bars"></i>
+    </button>
+    <img src="./assets/img/logo.png" alt="logo">
+    <small class="is-camilla-green-2">In Berlin since 2011</small>
+  </div>
+  <span class="is-nav-container">
+    <nav class="is-camilla-nav is-camilla-grey-background is-inactive" role="navigation" aria-label="main navigation" id="main-nav">
+      <% const sections=[{ label: 'Home' , href: '/' , display: true }, { label: 'About Us' , href: '/about-us' ,
+        display: true }, { label: 'Menu' , href: '/menu' , display: generatedPDF }, { label: 'Book a Table'
+        , href: '/book-a-table' , display: true }, { label: 'Contact' , href: '/contact' , display: true }, {
+        label: 'Admin' , href: '/admin' , display: false } ] %>
+        <ul class="is-camilla-nav sliding-line ">
+          <% sections.forEach((section)=> {
+            if(section.display){
+            %>
+            <li class="sliding"><a class="hover hover-2 <%- url === section.href ? 'nav-item-active' : null %>"
+                href="<%= section.href %>">
+                <%= section.label %>
+              </a></li>
+            <%}})%>
+        </ul>
+    </nav>
+  </span>
+</nav>
+
+<%- include(partial) %>
+<%- include('./footer') %>
+<script src="/js/global.js"></script>
+<script src="/js/main.js"></script>

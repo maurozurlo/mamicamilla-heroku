@@ -1,0 +1,36 @@
+<div class="container">
+  <h1 class="title">
+    PDF Menu
+  </h1>
+  <div class="columns">
+    <div class="column">
+      <h2 class="subtitle">
+        Preview
+      </h2>
+    </div>
+    <div class="column">
+      <div class="buttons has-addons is-pulled-right">
+        <button class="button is-info" id="generate-PDF" onclick="generatePDF()">Generate</button>
+        <a
+        id="pdf-download-button"
+        class="button
+        is-primary"
+        target="_blank"
+        <% if(fileExists) { %> href="/download/Menu.pdf" <%}%>
+        <% if(!fileExists) { %> disabled <%}%>
+        download="">Download</a>
+      </div>
+    </div>
+  </div>
+  <script src="/js/pdf/pdf.worker.js"></script>
+  <script src="/js/pdf/pdf.js"></script>
+  <script src="/js/pdf/pdf_view.js"></script>
+  <div class="column">
+    <div class="notification is-primary is-light">
+      Click on the generate button to create your menu's PDF file.<br> Once a menu file has been created, we will display a preview below this message.
+    </div>
+  </div>
+  <div class="column">
+    <canvas id="the-canvas"></canvas>
+  </div>
+</div>

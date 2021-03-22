@@ -1,0 +1,57 @@
+<%- include('../partials/modals/user_modal') %>
+
+<h2 class="title">Staff view</h2>
+
+<div class="container my-3 is-flex is-justify-content-flex-end">
+    <button  class="button is-primary" onclick="openModal('userCreateModal',InitializeCreateUser)">Create user</button>
+</div>
+
+<div class="table-container">
+  <table class="table is-fullwidth">
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>Full Name</th>
+        <th>Title</th>
+        <th>Last Active</th>
+        <th>Created At</th>
+        <!-- <th>Status</th> -->
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+        <% users.forEach((user,i)=> {%>
+          <tr>
+            <td><p class="is-capped-text"><%- user.username %></p></td>
+            <td><%- user.fullName %></td>
+            <td><%- user.title %></td>
+            <td><%- new Date(user.lastActive).toLocaleDateString('en-US', {
+              month: 'short',
+              day: '2-digit',
+              year: 'numeric',
+              hour: '2-digit',
+              minute: '2-digit'
+            }); %></td>
+            <td><%- new Date(user.createdAt).toISOString().split('T')[0] %></td>
+            <!-- <td><%- user.isInactive ? 'Inactive' : 'Active' %></td> -->
+            <td><div class="field is-grouped">
+              <!-- <p class="control">
+                <button class="button is-info" value='<%- JSON.stringify(user) %>' onclick="openModal('userCreateModal',InitializeEditUser)">
+                  <i class="fas fa-edit"></i>
+                </button>
+              </p> -->
+              <p class="control">
+                <button class="button is-danger"
+                onclick="deleteRecord('<%- user.id %>','<%- user.username %>')"
+                >
+                  <i class="fas fa-trash-alt"></i>
+                </buton>
+              </p>
+            </div></td>
+          </tr>
+          <%})%>
+    </tbody>
+  </table>
+</div>
+
+<script src="/js/staff/staff.js"></script>

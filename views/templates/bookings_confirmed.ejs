@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MamiCamilla</title>
+</head>
+<%
+const timeValue = `${time.slice(0,2)}:${time.slice(2,4) === '00' ? '00' : '30'} hr`
+%>
+
+<body>
+  Dear <%-fname%> <%-lname%>,
+  We want to inform you that your reservation has been re-confirmed.
+  Here's the information about your confirmed reservation:
+  Name: <%-fname%> <%-lname%><br>
+  Phone: <%- phone %> <br>
+  Email: <%- email %> <br>
+  Table for: <%- guests %> <br>
+  Date: <%- date %> at <%- timeValue %><br>
+  Comments: <p><%- comments %></p> <br>
+
+  <p>Please don't hesitate to call us if you have any concerns.</p>
+  Thank you,
+  MamiCamilla
+</body>
+</html>

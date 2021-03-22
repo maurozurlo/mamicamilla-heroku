@@ -1,0 +1,62 @@
+<div class="modal" id="userCreateModal">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title" id="user-modal-title"></p>
+        <button class="delete" aria-label="close" onclick='closeModal("userCreateModal")'></button>
+      </header>
+      <section class="modal-card-body">
+        <div class="content">
+          <!--FORM CONTENT-->
+          <!--Title-->
+          <div class="field">
+            <label class="label">Username</label>
+            <div class="control">
+              <input class="input" type="text" id="user-name">
+            </div>
+          </div>
+          <!--Title-->
+          <div class="field">
+            <label class="label">Real name</label>
+            <div class="control">
+              <input class="input" type="text" id="user-fullName">
+            </div>
+          </div>
+          <!--Password-->
+          <div class="field">
+            <label class="label">Password</label>
+            <div class="control">
+              <input class="input" type="password" id="user-pass1">
+            </div>
+          </div>
+          <!--Password-->
+          <div class="field">
+            <label class="label">Repeat Password</label>
+            <div class="control">
+              <input class="input" type="password" id="user-pass2">
+            </div>
+          </div>
+          <!--Title-->
+          <div class="field">
+            <label class="label">Title</label>
+            <div class="control">
+              <input class="input" type="text" id="user-title">
+            </div>
+          </div>
+          <!--Belongs to-->
+          <div class="field" style="display: none;">
+            <label class="label">Status</label>
+            <div class="select">
+              <select id="user-isInactive">
+                <option value="0" selected>Active</option>
+                <option value="1">Inactive</option>
+              </select>
+            </div>
+          </div>
+      </section>
+      <input type="hidden" id="user-id">
+      <footer class="modal-card-foot" id="user-modal-footer"></footer>
+    </div>
+  </div>
+</div>

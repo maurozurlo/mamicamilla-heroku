@@ -1,0 +1,35 @@
+<div class="modal" id="itemExistingModal">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Add existing Dish / Drink</p>
+        <button class="delete" aria-label="close" onclick='closeModal("itemExistingModal")'></button>
+      </header>
+      <section class="modal-card-body">
+        <div class="content">
+          <!--FORM CONTENT-->
+          <div class="field">
+            <label class="label">Dishes / Drinks</label>
+            <div class="select">
+              <select id="item-add-list">
+              </select>
+            </div>
+          </div>
+          <!--Belongs to-->
+          <div class="field">
+            <label class="label">Assign to category</label>
+            <div class="select">
+              <select id="item-add-belongsto">
+              </select>
+            </div>
+          </div>
+      </section>
+      <footer class="modal-card-foot">
+        <button class="button is-success" id="item-existing-submit" onclick="addExistingItem(event)">
+          Add dish / drink to category
+        </button>
+      </footer>
+    </div>
+  </div>
+</div>

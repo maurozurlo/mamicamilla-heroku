@@ -1,0 +1,54 @@
+<div class="modal" id="catCreateModal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title" id="category-modal-title"></p>
+                <button class="delete" aria-label="close" onclick='closeModal("catCreateModal")'></button>
+            </header>
+            <section class="modal-card-body">
+                <div class="content">
+                    <!--FORM CONTENT-->
+                    <!--Icon-->
+                    <div class="field" style="display: none;">
+                        <label class="label">Icon</label>
+                        <div class="category-icon-container">
+                            <label>
+                                <input type="radio" name="category-icon" value="icon_1">
+                            </label>
+                        </div>
+                    </div>
+                    <!--Title-->
+                    <div class="field">
+                        <label class="label">Title of the category <small>(max 30 characters)</small></label>
+                        <div class="control">
+                            <input class="input" type="text" placeholder="Enter title..." id="category-title">
+                        </div>
+                    </div>
+                    <!--Description-->
+                    <div class="field">
+                        <label class="label">Description <small>optional</small></label>
+                        <div class="control">
+                            <textarea class="textarea" placeholder="Enter a description..." rows="3"
+                                id="category-description"></textarea>
+                        </div>
+                    </div>
+                    <!--Belongs to-->
+                    <div class="field">
+                        <label class="label">Assign to a category</label>
+                        <div class="select">
+                            <select id="category-belongsto">
+                                <option value="" selected>None</option>
+                            </select>
+                        </div>
+                        <span id="category-loader"></span>
+                    </div>
+                    <input type="hidden" name="order" id="category-order">
+                    <input type="hidden" name="category-id" id="category-id">
+                    <input type="hidden" name="category-isactive" id="category-isactive">
+                </div>
+            </section>
+            <footer class="modal-card-foot" id="category-modal-footer"></footer>
+        </div>
+    </div>
+</div>

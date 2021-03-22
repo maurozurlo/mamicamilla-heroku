@@ -1,0 +1,14 @@
+<div class="column">
+  <h1 class="title">Logs</h1>
+  <table class="table is-fullwidth is-striped">
+    <tbody>
+    <% if (logs.length> 0) { %>
+      <% logs.forEach((log,i)=> {%>
+        <tr>
+          <td><%= log.action %></td>
+          <td class="level-right"><a class="tag is-small is-info" href="#"><%= log.timestamp %></a></td>
+        </tr>
+        <%}) }%>
+      </tbody>
+    </table>
+</div>

@@ -1,0 +1,113 @@
+<div class="modal" id="itemCreateModal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title" id="item-modal-title"></p>
+                <button class="delete" aria-label="close" onclick='closeModal("itemCreateModal")'></button>
+            </header>
+            <section class="modal-card-body">
+                <div class="content">
+                    <!--FORM CONTENT-->
+                    <!--Title-->
+                    <div class="field">
+                        <label class="label">Title of the item <small>(max 30 characters)</small></label>
+                        <div class="control">
+                            <input class="input" type="text" placeholder="Enter title..." id="item-title">
+                        </div>
+                    </div>
+                    <!--Description-->
+                    <div class="field">
+                        <label class="label">Description <small>(optional)</small></label>
+                        <div class="control">
+                            <textarea class="textarea" placeholder="Enter a description..." rows="2"
+                                id="item-description"></textarea>
+                        </div>
+                    </div>
+                    <!--Belongs to-->
+                    <div class="field">
+                        <label class="label">Assign to category</label>
+                        <div class="select">
+                            <select id="item-belongsto">
+                                <option value="" selected>None</option>
+                            </select>
+                        </div>
+                        <span id="item-loader"></span>
+                    </div>
+                    <div class="field">
+                        <label class="label">Link for e-commerce</label>
+                        <div class="control">
+                            <input  class="input" type="text" name="item-ecommerceurl" id="item-ecommerceurl">
+                        </div>
+                        <span id="item-loader"></span>
+                    </div>
+                    <div class="columns">
+                        <div class="column pl-0">
+                            <div class="field">
+                                <label class="label">Allergens / Additives</label>
+                                <span id="item-mods-select"></span>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <!--Additives-->
+                            <!--Info-->
+                            <div class="field">
+                                <label class="label">Further Info</label>
+                                <span id="item-infos-select"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="columns">
+                    <div class="column pl-0">
+                        <!--Price-->
+                        <div class="field">
+                            <label class="label">Price <small>(optional)</small></label>
+                            <div class="control">
+                                <input type="number" class="input" name="item-price" id="item-price">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="column">
+                        <!--Price-->
+                        <div class="field">
+                            <label class="label">Amount <small>(optional)</small></label>
+                            <div class="control">
+                                <input type="number" class="input" name="item-amount" placeholder="i.e 200"
+                                    id="item-amount">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="column ">
+                        <!--Unit-->
+                        <div class="field">
+                            <label class="label">Unit <small>(optional)</small></label>
+                            <div class="select">
+                                <select id="item-unit">
+                                    <option value="" selected>Not specified</option>
+                                    <option value="cl">cl</option>
+                                    <option value="ml">ml</option>
+                                    <option value="l">l</option>
+                                    <option value="dose">Dose</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </section>
+            <input type="hidden" name="mods" id="item-mods">
+            <input type="hidden" name="infos" id="item-infos">
+            <input type="hidden" name="modifiers" id="item-allmods">
+            <input type="hidden" name="order" id="item-order">
+            <input type="hidden" name="item-id" id="item-id">
+            <input type="hidden" name="item-isactive" id="item-isactive">
+            <footer class="modal-card-foot" id="item-modal-footer"></footer>
+        </div>
+    </div>
+</div>
