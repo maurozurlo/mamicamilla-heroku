@@ -2,3 +2,4 @@
 docker/data/db/**
 db/data/**
 /bkps
+.env

@@ -4,20 +4,18 @@
   rel="stylesheet">
 
 <nav class="navbar is-fixed-top">
-  <div class="is-main-header is-camilla-white-background">
-    <button class="button fixed-48px-width" onclick="toggleMainNav()">
+  <main class="is-camilla-nav is-camilla-grey-background is-inactive" role="navigation" aria-label="main navigation"
+    >
+    <button class="is-camilla-hamburger button fixed-48px-width" onclick="toggleMainNav()">
       <i id="burger-btn-icon" class="fas fa-bars"></i>
     </button>
-    <img src="./assets/img/logo.png" alt="logo">
-    <small class="is-camilla-green-2">In Berlin since 2011</small>
-  </div>
-  <span class="is-nav-container">
-    <nav class="is-camilla-nav is-camilla-grey-background is-inactive" role="navigation" aria-label="main navigation" id="main-nav">
-      <% const sections=[{ label: 'Home' , href: '/' , display: true }, { label: 'About Us' , href: '/about-us' ,
-        display: true }, { label: 'Menu' , href: '/menu' , display: generatedPDF }, { label: 'Book a Table'
-        , href: '/book-a-table' , display: true }, { label: 'Contact' , href: '/contact' , display: true }, {
-        label: 'Admin' , href: '/admin' , display: false } ] %>
-        <ul class="is-camilla-nav sliding-line ">
+    <img class="is-camilla-logo" src="./assets/img/logo.svg" alt="logo">
+    <% const sections=[{ label: 'Home' , href: '/' , display: true }, { label: 'About Us' , href: '/about-us' , display:
+      true }, { label: 'Menu' , href: '/menu' , display: generatedPDF }, { label: 'Book a Table' , href: '/book-a-table'
+      , display: true }, { label: 'Contact' , href: '/contact' , display: true }, { label: 'Admin' , href: '/admin' ,
+      display: false } ] %>
+      <span class="is-camilla-mobile-wrapper is-inactive" id="main-nav">
+        <ul class="is-camilla-nav sliding-line">
           <% sections.forEach((section)=> {
             if(section.display){
             %>
@@ -27,11 +25,13 @@
               </a></li>
             <%}})%>
         </ul>
-    </nav>
-  </span>
+      </span>
+      <div class="opening-hours">OPENING HOURS <br> 08:00 - 16:00 | 18:00 - 22:00</div>
+  </main>
 </nav>
-
-<%- include(partial) %>
+<main id="content">
+  <%- include(partial) %>
+</main>
 <%- include('./footer') %>
-<script src="/js/global.js"></script>
-<script src="/js/main.js"></script>
+  <script src="/js/global.js"></script>
+  <script src="/js/main.js"></script>
