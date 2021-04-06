@@ -99,18 +99,34 @@
     margin-bottom: 1em;
   }
 
-  .modifiers{
+  .modifiers {
     columns: 3
   }
 
   @media screen and (max-width: 414px) {
-    .modifiers{
-    columns: 1
-  }
+    .modifiers {
+      columns: 1
+    }
   }
 </style>
+<!-- Element Centered -->
+<section class="section is-centered container" id="section-1">
+  <article class="mb-5">
+    <h1 class="is-georgia title has-letter-spacing">Pizza Berlin – <span class="is-camilla-green">Unsere Speisekarte in Prenzlauer Berg</span></h1>
+    <a class="skip-main" href="#menu">Zum Hauptinhalt springen</a>
+    <p>Sie wollen sich schon vor dem Besuch in unserer Pizzeria in Berlin über unser Angebot informieren? Dann sind Sie
+      hier genau richtig. Nachfolgend finden Sie unsere Speisekarte.
+      Nutzen Sie, wenn Sie sich entschieden haben, doch während der Pandemie unsere Möglichkeit zur Vorbestellung des
+      Take Away per
+      <a href="tel: +491633710656" target="_blank">WhatsApp</a> oder direkt der Bestellung über einen von zwei Lieferdiensten ( <a
+        href=" https://www.lieferando.de/speisekarte/mami-camilla-restaurant?kw1&k1111=k1111&gclid=CjwKCAiAp4KCBhB6EiwAxRxbpDADeJj0LBse19n5JoFYV6zF_dyWUsjdxjDo8GsdfBc4IVha0KMPAxoCVOQQAvD_BwE&gclsrc=aw.ds " target="_blank">Lieferando</a>
+      oder <a href="https://wolt.com/en/deu/berlin/restaurant/mami-camilla" target="_blank"> Wolt </a> ).
+      Wir freuen uns darauf Ihnen beste neapolitanische Pizza liefern zu können.
+    </p>
+  </article>
+</section>
 
-<div class="container">
+<section class="section is-centered container" id="section-1">
   <% if (categories.length> 0) { %>
     <% categories.forEach((category,i)=> {%>
       <div class="category-header">
@@ -182,7 +198,7 @@
     <p>20 = Säuerungsmittel</p>
     <p>15 = Unter Schutzatmosphäre verpackt</p>
   </div>
-<hr>
+  <hr>
   <div class="modifiers mt-2">
 
     <p>a = glutenhaltiges Getreide</p>
@@ -227,9 +243,9 @@
       Sesamerzeugnisse</p>
     <p>m = Schwefeldioxid und Sulfite</p>
 
-    </div>
-    <hr>
-<div class="modifiers mt-2 mb-4">
+  </div>
+  <hr>
+  <div class="modifiers mt-2 mb-4">
 
     <p><img class="info-2" src="/assets/img/scharf.svg" /> = Scharf</p>
     <p><img class="info-2" src="/assets/img/vegan.svg" /> = Vegan</p>
@@ -238,15 +254,15 @@
 
     <p><img class="info-2" src="/assets/img/regional.svg" /> = Regional</p>
     <p><img class="info-2" src="/assets/img/bio.svg" /> = Bio</p>
-</div>
+  </div>
 
-<p class="has-text-centered">
-  Alle Preise in Euro inkl. MwSt. und Bedienung <br>
+  <p class="has-text-centered">
+    Alle Preise in Euro inkl. MwSt. und Bedienung <br>
     Bei Fragen wenden Sie sich bitte an das Servicepersonal.
-</p>
-<div class="has-text-centered">
-  <a href='/download/Menu.pdf' class="button is-camilla-button mt-4">
-    Download Menu
-  </a>
-</div>
-</div>
+  </p>
+  <div class="has-text-centered">
+    <a href='/download/Menu.pdf' class="button is-camilla-button mt-4" target="_blank">
+      Speisekarte Herunterladen
+    </a>
+  </div>
+</section>

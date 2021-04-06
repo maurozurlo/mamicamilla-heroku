@@ -191,12 +191,6 @@ html{
   padding-top: 60px;
 }
 
-.is-camilla-form{
-  width: 85%;
-  margin: 0 auto;
-  max-width: 650px;
-}
-
 .is-camilla-form input, .is-camilla-form select {
   height: 55px;
   border: 2px solid var(--camilla-green);
@@ -396,7 +390,7 @@ small.form-error{
 }
 
 .is-camilla-mobile-wrapper{
-  min-width: 460px;
+  min-width: 520px;
 }
 
 .is-camilla-title{

@@ -27,7 +27,7 @@ router.get("/", (req, res) => {
     })
 })
 
-router.get("/about-us", (req, res) => {
+router.get("/pizzeria-berlin", (req, res) => {
   return res.render("./landing/index",
     {
       url: req.originalUrl,
@@ -36,7 +36,7 @@ router.get("/about-us", (req, res) => {
     })
 })
 
-router.get("/menu", async (req, res) => {
+router.get("/pizza-berlin", async (req, res) => {
   let categories = []
   try {
     categories = await getFormattedMenu()
@@ -53,7 +53,7 @@ router.get("/menu", async (req, res) => {
     })
 })
 
-router.get("/contact", (req, res) => {
+router.get("/kontakt-pizzeria-berlin", (req, res) => {
   return res.render("./landing/index",
     {
       url: req.originalUrl,
@@ -81,11 +81,11 @@ router.get("/datenschutz", (req, res) => {
     })
 })
 
-router.get("/book-a-table", async (req, res) => {
+router.get("/tisch-reservieren-berlin", async (req, res) => {
   try {
     const [{ value }] = await getSetting('booking_settings')
     const parsedValues = JSON.parse(value)
-  
+
     return res.render("./landing/index",
       {
         url: req.originalUrl,
@@ -94,7 +94,7 @@ router.get("/book-a-table", async (req, res) => {
         holidays: parsedValues.holidays,
         hcaptcha: process.env.HCAPTCHA_PUBLIC,
         generatedPDF: getGeneratedPDF()
-      })  
+      })
   } catch (error) {
     console.log("DB seems unavailable: ", error)
     const parsedValues = require("../defaults/booking_settings.json")
@@ -106,10 +106,10 @@ router.get("/book-a-table", async (req, res) => {
       holidays: parsedValues.holidays,
       hcaptcha: process.env.HCAPTCHA_PUBLIC,
       generatedPDF: getGeneratedPDF()
-    })  
+    })
 
   }
-  
+
 })
 
 router.post("/api/send-contact",
