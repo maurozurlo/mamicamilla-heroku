@@ -53,7 +53,7 @@ router.get("/pizza-berlin", async (req, res) => {
     })
 })
 
-router.get("/kontakt-pizzeria-berlin", (req, res) => {
+router.get("/pizzeria-berlin-kontakt", (req, res) => {
   return res.render("./landing/index",
     {
       url: req.originalUrl,
@@ -63,7 +63,7 @@ router.get("/kontakt-pizzeria-berlin", (req, res) => {
     })
 })
 
-router.get("/imprint", (req, res) => {
+router.get("/pizzeria-berlin-impressum", (req, res) => {
   return res.render("./landing/index",
     {
       url: req.originalUrl,

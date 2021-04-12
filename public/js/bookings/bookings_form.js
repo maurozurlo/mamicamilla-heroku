@@ -99,7 +99,7 @@ const gatherBookingData = () => {
   if (checkIfNotEmail(bookingEmail)) return {}
 
   if (captchaResponse === '') {
-    alert("Please complete the verification")
+    alert("Bitte beenden Sie die Verfizierung via Captcha")
     return {}
   }
 
@@ -144,13 +144,13 @@ const checkDate = (event) => {
   const today = new Date()
 
   if (checkForHolidays(targetDate)) {
-    alert("Sorry, booking is not available for this date")
+    alert("Eine Buchung zu diesem Zeitpunkt ist leider nicht möglich. Es tut uns leid")
     setValidDate(today)
     return
   }
 
   if (targetDate < today) {
-    alert('Please select a date in the future')
+    alert('Bitte wählen Sie ein zukünftiges Datum aus')
     setValidDate(today)
     return
   }

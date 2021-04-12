@@ -39,7 +39,7 @@ const gatherContactData = () => {
   if (checkIfEmpty(contactMessage, 'Bitte geben Sie Ihre Nachricht ein')) return {}
 
   if (captchaResponse === '') {
-    alert("Please complete the verification")
+    alert("Bitte beenden Sie die Verfizierung via Captcha")
     return {}
   }
   return data
@@ -77,13 +77,13 @@ const sendContact = async (event) => {
 }
 
 
-window.onscroll = function() {stickyNav()}
+window.onscroll = function () { stickyNav() }
 const sticky = bottomNav.offsetTop - window.screen.availHeight
 
 function stickyNav() {
-  if(window.pageYOffset >= sticky){
+  if (window.pageYOffset >= sticky) {
     bottomNav.classList.add("static")
-  }else{
+  } else {
     bottomNav.classList.remove("static")
   }
 }
