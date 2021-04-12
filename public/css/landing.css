@@ -397,7 +397,7 @@ small.form-error{
   font-family: Georgia, 'Times New Roman', Times, serif;
   letter-spacing: 2px;
   font-size: 1.5em;
-  width: 100%;
+  width: 90%;
   max-width: 960px;
   margin: 1em auto;
   text-align: center;
@@ -474,11 +474,14 @@ a.hover:hover{
 
 @media screen and (max-width: 414px) {
   .section{
-    padding-top: 0;
+    padding-top: 3rem;
   }
+
   .is-camilla-card{
     flex: 1 0 100%;
-    padding: 1em;
+    padding: 0;
+    padding-bottom: 1em;
+    min-height: auto;
     margin: 0;
   }
   #social-container{
