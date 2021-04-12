@@ -6,9 +6,9 @@ const { logger } = require('./logger')
 const tableName = 'bookings'
 
 const emailSubjects = {
-  confirmed: 'Your booking has been confirmed',
-  cancelled: 'Your booking has been cancelled',
-  reconfirmed: 'Your booking has been re-confirmed'
+  confirmed: 'Buchungsbestätigung Mami Camilla',
+  cancelled: 'STORNIERUNG: Tisch bei Mami Camilla',
+  reconfirmed: 'Buchung bei Mami Camilla'
 }
 
 const getByDate = async (start, end) => {

@@ -1,27 +1,219 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MamiCamilla</title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta name="x-apple-disable-message-reformatting">
+  <!--[if !mso]><!-->
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <!--<![endif]-->
+  <title></title>
+  <style type="text/css">
+    @media (max-width:620px) {
+      .u-row-container {
+        max-width: 100% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important
+      }
+
+      .u-row .u-col {
+        min-width: 320px !important;
+        max-width: 100% !important;
+        display: block !important
+      }
+
+      .u-row {
+        width: calc(100% - 40px) !important
+      }
+
+      .u-col {
+        width: 100% !important
+      }
+
+      .u-col>div {
+        margin: 0 auto
+      }
+    }
+
+    body {
+      margin: 0;
+      padding: 0
+    }
+
+    table,
+    td,
+    tr {
+      vertical-align: top;
+      border-collapse: collapse
+    }
+
+    p {
+      margin: 0
+    }
+
+    * {
+      line-height: inherit
+    }
+  </style>
+  <!--[if !mso]><!-->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;display=swap" rel="stylesheet"
+    type="text/css">
+  <!--<![endif]-->
 </head>
-<%
+
+<body class="clean-body" style="margin: 0;padding: 0;-webkit-text-size-adjust: 100%;background-color: #efefef">
+  <%
 const timeValue = `${time.slice(0,2)}:${time.slice(2,4) === '00' ? '00' : '30'} hr`
 %>
-
-<body>
-  Dear <%-fname%> <%-lname%>,
-  We want to inform you that your reservation has been re-confirmed.
-  Here's the information about your confirmed reservation:
-  Name: <%-fname%> <%-lname%><br>
-  Phone: <%- phone %> <br>
-  Email: <%- email %> <br>
-  Table for: <%- guests %> <br>
-  Date: <%- date %> at <%- timeValue %><br>
-  Comments: <p><%- comments %></p> <br>
-
-  <p>Please don't hesitate to call us if you have any concerns.</p>
-  Thank you,
-  MamiCamilla
+  <!--[if IE]><div class="ie-container"><![endif]-->
+  <!--[if mso]><div class="mso-container"><![endif]-->
+  <table cellpadding="0" cellspacing="0"
+    style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;min-width: 320px;Margin: 0 auto;background-color: #efefef;width:100%">
+    <tbody>
+      <tr style="vertical-align: top">
+        <td style="word-break: break-word;border-collapse: collapse !important;vertical-align: top">
+          <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="background-color: #efefef;"><![endif]-->
+          <div class="u-row-container" style="padding: 0px;background-color: transparent">
+            <div class="u-row"
+              style="Margin: 0 auto;min-width: 320px;max-width: 600px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: #0000ff;">
+              <div style="border-collapse: collapse;display: table;width: 100%;background-color: transparent;">
+                <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-color: transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:600px;"><tr style="background-color: #0000ff;"><![endif]-->
+                <!--[if (mso)|(IE)]><td align="center" width="600" style="width: 600px;padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;" valign="top"><![endif]-->
+                <div class="u-col u-col-100"
+                  style="max-width: 320px;min-width: 600px;display: table-cell;vertical-align: top;">
+                  <div style="width: 100% !important;">
+                    <!--[if (!mso)&(!IE)]><!-->
+                    <div
+                      style="background-color: #464646;padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;">
+                      <!--<![endif]-->
+                      <table border="0" cellpadding="0" cellspacing="0" role="presentation"
+                        style="font-family:'Open Sans',sans-serif;" width="100%">
+                        <tbody>
+                          <tr>
+                            <td align="left"
+                              style="overflow-wrap:break-word;word-break:break-word;padding:15px 10px 13px;font-family:'Open Sans',sans-serif;">
+                              <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tbody>
+                                  <tr>
+                                    <td align="center" class="v-text-align"
+                                      style="padding-right: 0px;padding-left: 0px;"><img align="center" alt="logo"
+                                        border="0" class="v-src-width v-src-max-width"
+                                        src="data:image/png;base64,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"
+                                        style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 28%;max-width: 100px;"
+                                        title="logo" width="100"></td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <!--[if (!mso)&(!IE)]><!-->
+                    </div>
+                    <!--<![endif]-->
+                  </div>
+                </div>
+                <!--[if (mso)|(IE)]></td><![endif]-->
+                <!--[if (mso)|(IE)]></tr></table></td></tr></table><![endif]-->
+              </div>
+            </div>
+          </div>
+          <div class="u-row-container" style="padding: 0px;background-color: transparent">
+            <div class="u-row"
+              style="Margin: 0 auto;min-width: 320px;max-width: 600px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: #ffffff;">
+              <div style="border-collapse: collapse;display: table;width: 100%;background-color: transparent;">
+                <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-color: transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:600px;"><tr style="background-color: #ffffff;"><![endif]-->
+                <!--[if (mso)|(IE)]><td align="center" width="600" style="width: 600px;padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;" valign="top"><![endif]-->
+                <div class="u-col u-col-100"
+                  style="max-width: 320px;min-width: 600px;display: table-cell;vertical-align: top;">
+                  <div style="width: 100% !important;">
+                    <!--[if (!mso)&(!IE)]><!-->
+                    <div
+                      style="padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;">
+                      <!--<![endif]-->
+                      <table border="0" cellpadding="0" cellspacing="0" role="presentation"
+                        style="font-family:'Open Sans',sans-serif;" width="100%">
+                        <tbody>
+                          <tr>
+                            <td align="left"
+                              style="overflow-wrap:break-word;word-break:break-word;padding:20px;font-family:'Open Sans',sans-serif;">
+                              <table align="center" border="0" cellpadding="0" cellspacing="0"
+                                style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;border-top: 0px solid #BBBBBB;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%"
+                                width="100%">
+                                <tbody>
+                                  <tr style="vertical-align: top">
+                                    <td
+                                      style="word-break: break-word;border-collapse: collapse !important;vertical-align: top;font-size: 0px;line-height: 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
+                                      <span>&nbsp;</span></td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <table border="0" cellpadding="0" cellspacing="0" role="presentation"
+                        style="font-family:'Open Sans',sans-serif;" width="100%">
+                        <tbody>
+                          <tr>
+                            <td align="left"
+                              style="overflow-wrap:break-word;word-break:break-word;padding:0px 25px 10px;font-family:'Open Sans',sans-serif;">
+                              <div class="v-text-align"
+                                style="color: #333333;line-height: 160%;/* text-align: center; */word-wrap: break-word;">
+                                <p style="font-size: 14px; line-height: 160%;">Sehr geehrte/r Pizzaliebhaber/in
+                                  <strong>%-fname% %-lname%</strong>,<br>
+                                  Vielen Dank für Ihre Tischreservierung bei der Pizzeria Mami Camilla. Wir werden Ihre Reservierung zu den nachfolgenden Daten zeitnah bearbeiten:</p><br>
+                                <table border="0" cellpadding="0" cellspacing="0" role="presentation"
+                                  style="font-family:'Open Sans',sans-serif;" width="100%">
+                                  <tr>
+                                    <td><strong>Name:</strong></td>
+                                    <td>%-fname% %-lname%</td>
+                                  </tr>
+                                  <tr>
+                                    <td><strong>Telefon:</strong></td>
+                                    <td>%-phone%</td>
+                                  </tr>
+                                  <tr>
+                                    <td><strong>Email:</strong></td>
+                                    <td>%-email%</td>
+                                  </tr>
+                                  <tr>
+                                    <td><strong>Tisch für:</strong></td>
+                                    <td>%-guests%</td>
+                                  </tr>
+                                  <tr>
+                                    <td><strong>Datum:</strong></td>
+                                    <td>%-date% at %-timeValue%</td>
+                                  </tr>
+                                  <tr>
+                                    <td><strong>Nachricht:</strong></td>
+                                    <td>%-comments%</td>
+                                  </tr>
+                                </table><br>
+                                <p style="font-size: 14px; line-height: 180%;">Beachten Sie bitte bereits 10 Minuten vor Ihrem Reservierungszeitraum da zu sein.
+                                  Bei weiteren Fragen kontaktieren Sie uns gern jederzeit telefonisch. Vielen Dank, Ihr Mami Camilla-Team</p>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <!--[if (!mso)&(!IE)]><!-->
+                    </div>
+                    <!--<![endif]-->
+                  </div>
+                </div>
+                <!--[if (mso)|(IE)]></td><![endif]-->
+                <!--[if (mso)|(IE)]></tr></table></td></tr></table><![endif]-->
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <!--[if mso]></div><![endif]-->
+  <!--[if IE]></div><![endif]-->
 </body>
+
 </html>

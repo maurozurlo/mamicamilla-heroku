@@ -116,7 +116,7 @@ const createValidationError = (element, error) => {
       removeValidationError(element)
       return false
     } else {
-      createValidationError(element, 'Please enter a valid email')
+      createValidationError(element, 'Bitte geben Sie eine gültige Email-Adresse an')
       return true
     }
   }
@@ -126,7 +126,7 @@ const createValidationError = (element, error) => {
       removeValidationError(element)
       return false
     } else {
-      createValidationError(element, 'Please enter a valid phone number')
+      createValidationError(element, 'Bitte geben Sie eine gültige Telefonnummer an')
       return true
     }
   }

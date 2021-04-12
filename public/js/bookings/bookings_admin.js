@@ -59,16 +59,16 @@ const gatherBookingData = () => {
   // Validation
   //TODO: Replace alerts with nicer validation
   if (data.fname === "" || data.lname === "") {
-    alert("Please enter your name")
+    alert("Bitte geben Sie Ihren Namen an")
     return {}
   }
   if (!phoneRegex.test(data.phone)) {
-    alert("Please enter a valid phone number")
+    alert("Bitte geben Sie eine gültige Telefonnummer an")
     return {}
   }
 
   if (!emailRegex.test(data.email)) {
-    alert("Please enter a valid email address")
+    alert("Bitte geben Sie eine gültige Email-Adresse an")
     return {}
   }
 

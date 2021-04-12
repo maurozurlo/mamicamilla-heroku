@@ -34,9 +34,9 @@ const gatherContactData = () => {
     hcaptcha: captchaResponse
   }
   // Validation
-  if (checkIfEmpty(contactName, 'Please enter your name')) return {}
+  if (checkIfEmpty(contactName, 'Bitte geben Sie Ihren Namen an')) return {}
   if (checkIfNotEmail(contactEmail)) return {}
-  if (checkIfEmpty(contactMessage, 'Please enter your message')) return {}
+  if (checkIfEmpty(contactMessage, 'Bitte geben Sie Ihre Nachricht ein')) return {}
 
   if (captchaResponse === '') {
     alert("Please complete the verification")
@@ -62,11 +62,11 @@ const sendContact = async (event) => {
     })
     StopLoading(btn)
     if (req.status === 200) {
-      changeModalContent('Thank you for <span class="is-camilla-green">your message!</span>',
-        'Lorem ipsum dolo')
+      changeModalContent('Vielen Dank für  <span class="is-camilla-green">Ihre Nachricht!</span>',
+        'Wir kontaktieren Sie zeitnah per Email')
       openModal('landingModal')
     } else {
-      changeModalContent('Something went wrong', "We're very sorry, please try again later")
+      changeModalContent('Entschuldigung, Ihre Nachricht könnte habt gesendet werden', "Bitte versuchen Sie es später noch einmal oder kontaktieren Sie uns per Telefon oder E-Mail. Dankeschön.")
       openModal('landingModal')
     }
   } catch (error) {

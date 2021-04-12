@@ -405,11 +405,8 @@ small.form-error{
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--camilla-white);
-  background-color: var(--camilla-grey);
+  border: 2px solid var(--camilla-grey);
 }
-
-
 
 a.skip-main {
   width:1px;
@@ -426,7 +423,8 @@ a.skip-main:focus, a.skip-main:active {
   display: block;
   color: var(--camilla-white) !important;
   background-color:var(--camilla-grey) !important;
-  width: 300px;
+  width: 360px;
+  margin-bottom: 10px;
   height: auto;
   overflow:auto;
   padding:.75em 2em;
@@ -703,4 +701,8 @@ a.hover:hover{
   to {
     opacity: 1;
   }
+}
+
+#content{
+  min-height: 100vh;
 }

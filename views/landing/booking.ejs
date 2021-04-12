@@ -1,123 +1,126 @@
-<div class="container is-max-desktop text-container has-text-centered">
-  <h1 class="is-georgia title has-letter-spacing">Book <span class="is-camilla-green">a table</span></h1>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui impedit animi, quia debitis reprehenderit
-    repellendus fuga laborum voluptatum nobis, repellat voluptatem natus ipsam, nulla sunt! Soluta, similique?
-    Libero, consequuntur magni.</p>
-</div>
-
-<div class="container is-max-desktop mb-5">
-  <form class="is-camilla-form">
-    <div class="column">
-      <input type="hidden" id="booking-id">
-      <div class="content">
-        <!--fname/lname-->
-        <div class="columns">
-          <div class="column pl-0 px-sm-0">
-            <div class="field">
-              <label class="label">First name</label>
-              <div class="control">
-                <input class="input" onchange="checkIfEmpty(this, 'Please enter your first name')" type="text" id="booking-fname">
+<!-- Element Centered -->
+<section class="section is-centered container" id="section-1">
+  <article class="mb-5">
+    <h1 class="is-georgia title has-letter-spacing">Tisch reservieren Berlin – <span class="is-camilla-green">Planen Sie ein Pizza Dinner in unserem Restaurant</span></h1><a
+    class="skip-main" href="#book-form">Zum Hauptinhalt springen</a>
+    <p>Im Normalbetrieb sind unsere Tische gerade am Abend schnell belegt. Einen Tisch reservieren empfiehlt sich also durchaus. Besonders wenn Sie mit mehreren Personen unsere neapolitanische Pizza genießen möchten. Auch wenn Sie ein romantisches oder Geburtstagsdinner planen, ist das Reservieren eines Tisches hilfreich. So können wir Ihnen zum Beispiel einen ruhigen Platz zuweisen. Sie haben besondere Wünsche für Ihren Tisch und wollen Ihre Pizza bei schönem Ausblick auf die Hufelandstraße essen? Lassen Sie es uns wissen. Wir machen das gern für Sie möglich.
+      <br></br>
+      Reservieren Sie nachfolgend direkt online Ihren Tisch. Bitte lassen Sie uns im Feld „Kommentare“ wissen, ob wir auf irgendetwas ganz besonders achten sollen (z.B. Anlass), wenn wir Ihnen einen Tisch zuweisen. Vielen Dank und bis bald bei Mami Camilla!</p>
+    </article>
+    <form class="is-camilla-form" id="book-form">
+      <div class="column">
+        <input type="hidden" id="booking-id">
+        <div class="content">
+          <!--fname/lname-->
+          <div class="columns">
+            <div class="column pl-0 px-sm-0">
+              <div class="field">
+                <label class="label">Vorname</label>
+                <div class="control">
+                  <input class="input" onchange="checkIfEmpty(this, 'Bitte geben Sie Ihren Namen an')" type="text" id="booking-fname">
+                </div>
+              </div>
+            </div>
+            <div class="column px-sm-0">
+              <div class="field">
+                <label class="label">Nachname</label>
+                <div class="control">
+                  <input class="input"  onchange="checkIfEmpty(this, 'Bitte geben Sie Ihren Namen an')"
+                  type="text" id="booking-lname">
+                </div>
               </div>
             </div>
           </div>
-          <div class="column px-sm-0">
-            <div class="field">
-              <label class="label">Last name</label>
-              <div class="control">
-                <input class="input"  onchange="checkIfEmpty(this, 'Please enter your last name')"
-                type="text" id="booking-lname">
+          <!--phone/guests-->
+          <div class="columns">
+            <div class="column pl-0 px-sm-0">
+              <div class="field">
+                <label class="label">Telefon</label>
+                <div class="control">
+                  <input class="input" type="text" onchange="checkIfNotPhone(this)"
+                  placeholder="i.e +49 30 901820" id="booking-phone">
+                </div>
+              </div>
+            </div>
+            <div class="column px-sm-0">
+              <div class="field">
+                <label class="label">Anzahl der Gäste</label>
+                <div class="select is-fullwidth">
+                  <select id="booking-guests">
+                    <option value="1">1</option>
+                    <option value="2" selected>2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="-1">6+</option>
+                  </select>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <!--phone/guests-->
-        <div class="columns">
-          <div class="column pl-0 px-sm-0">
-            <div class="field">
-              <label class="label">Phone</label>
-              <div class="control">
-                <input class="input" type="text" onchange="checkIfNotPhone(this)"
-                placeholder="i.e +49 30 901820" id="booking-phone">
+          <!--date/time-->
+          <div class="columns">
+            <div class="column pl-0 px-sm-0">
+              <div class="field">
+                <label class="label">Datum</label>
+                <div class="control">
+                  <input class="input" type="date" onchange="checkDate(event)" id="booking-date">
+                </div>
+              </div>
+            </div>
+            <div class="column px-sm-0">
+              <div class="field">
+                <label class="label">Uhrzeit</label>
+                <div class="select is-fullwidth">
+                  <select id="booking-time">
+                  </select>
+                </div>
               </div>
             </div>
           </div>
-          <div class="column px-sm-0">
-            <div class="field">
-              <label class="label">Number of guests</label>
-              <div class="select is-fullwidth">
-                <select id="booking-guests">
-                  <option value="1">1</option>
-                  <option value="2" selected>2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="-1">6 or more</option>
-                </select>
+          <div class="columns">
+            <div class="column pl-0 px-sm-0">
+              <!--Email-->
+              <div class="field ">
+                <label class="label">Email Adresse</label>
+                <div class="control">
+                  <input class="input" onchange="checkIfNotEmail(this)"
+                  type="email" id="booking-email">
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-        <!--date/time-->
-        <div class="columns">
-          <div class="column pl-0 px-sm-0">
-            <div class="field">
-              <label class="label">Date</label>
-              <div class="control">
-                <input class="input" type="date" onchange="checkDate(event)" id="booking-date">
-              </div>
-            </div>
-          </div>
-          <div class="column px-sm-0">
-            <div class="field">
-              <label class="label">Time</label>
-              <div class="select is-fullwidth">
-                <select id="booking-time">
-                </select>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="columns">
-          <div class="column pl-0 px-sm-0">
-            <!--Email-->
-            <div class="field ">
-              <label class="label">Email Address</label>
-              <div class="control">
-                <input class="input" onchange="checkIfNotEmail(this)"
-                type="email" id="booking-email">
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="columns">
-          <div class="column pl-0 px-sm-0">
-            <!--Comments-->
-            <div class="field">
-              <label class="label">Comments <small>(optional)</small></label>
-              <div class="control">
-                <textarea class="textarea" placeholder="Any special request you have, we're here for you..." rows="3"
-                  id="booking-comments"></textarea>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="columns is-centered px-sm-0">
-          <div class="column is-half is-flex is-flex-direction-column is-align-items-center is-justify-content-center">
-            <!--Captcha-->
-            <div class="h-captcha" data-sitekey="<%= hcaptcha %>" data-callback="correctCaptcha"></div>
-            <!--Submit-->
-            <button class="button is-camilla-button is-fullwidth mt-4" id="booking-submit" onclick="addBooking(event)">
-              Submit
-            </button>
           </div>
 
+          <div class="columns">
+            <div class="column pl-0 px-sm-0">
+              <!--Comments-->
+              <div class="field">
+                <label class="label">Nachricht <small>(optional)</small></label>
+                <div class="control">
+                  <textarea class="textarea" placeholder="Geben Sie hier zusätzliche Wünsche oder Anliegen an..." rows="3"
+                    id="booking-comments"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="columns is-centered px-sm-0">
+            <div class="column is-half is-flex is-flex-direction-column is-align-items-center is-justify-content-center">
+              <!--Captcha-->
+              <div class="h-captcha" data-sitekey="<%= hcaptcha %>" data-callback="correctCaptcha"></div>
+              <!--Submit-->
+              <button class="button is-camilla-button is-fullwidth mt-4" id="booking-submit" onclick="addBooking(event)">
+                Senden
+              </button>
+            </div>
+
+          </div>
+
+
         </div>
-
-
       </div>
-    </div>
-  </form>
+    </form>
+</section>
+
   <div style="display: none;" id="hours"><%=hours%></div>
   <div style="display: none;" id="holidays"><%=holidays%></div>
   <%- include('../partials/modals/landing_modal') %>

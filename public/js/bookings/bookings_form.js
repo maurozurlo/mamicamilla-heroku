@@ -93,8 +93,8 @@ const gatherBookingData = () => {
     hcaptcha: captchaResponse
   }
   // Validation
-  if (checkIfEmpty(bookingFName, 'Please enter your first name')) return {}
-  if (checkIfEmpty(bookingLName, 'Please enter your last name')) return {}
+  if (checkIfEmpty(bookingFName, 'Bitte geben Sie Ihren Namen an')) return {}
+  if (checkIfEmpty(bookingLName, 'Bitte geben Sie Ihren Namen an')) return {}
   if (checkIfNotPhone(bookingPhone)) return {}
   if (checkIfNotEmail(bookingEmail)) return {}
 
@@ -124,11 +124,11 @@ const addBooking = async (event) => {
     StopLoading(btn)
     if (req.status === 200) {
       resetForm()
-      changeModalContent('Thank you for <span class="is-camilla-green">choosing us!</span>',
-        'Lorem ipsum dolo')
+      changeModalContent('Vielen Dank für <span class="is-camilla-green">Ihre Tischreservierung</span>',
+        'Wir kontaktieren Sie zeitnah per Email')
       openModal('landingModal')
     } else {
-      changeModalContent('Something went wrong', "We're very sorry, please try again later")
+      changeModalContent('Entschuldigung, Ihr Tischreservierung konnte leider nicht gebucht werden.', "Bitte versuchen Sie es später noch einmal oder kontaktieren Sie uns per Telefon oder E-Mail. Dankeschön.")
       openModal('landingModal')
     }
   } catch (error) {
