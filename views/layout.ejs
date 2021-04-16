@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -8,7 +8,14 @@
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
     integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-  <title>MamiCamilla</title>
+    <% if (locals.title) { %>
+      <title><%= locals.title %></title>
+      <% } else { %>
+        <title>MamiCamilla</title>
+     <% } %>
+  <meta http-equiv="language" content="de">
+  <meta name="description" content="Bei uns bekommen Sie handgemachte, neapolitanische Pizza vom authentischen Italiener. In schöner Umgebung mitten in Berlin Prenzlauer Berg. Besuchen Sie uns!">
+  <meta name="revisit-after" content="30 days">
 </head>
 <body>
   <%- body -%>

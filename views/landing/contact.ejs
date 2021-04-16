@@ -41,6 +41,13 @@
           <div class="column is-half is-flex is-flex-direction-column is-align-items-center is-justify-content-center">
             <!--Captcha-->
             <div class="h-captcha" data-sitekey="<%= hcaptcha %>" data-callback="correctCaptcha"></div>
+
+            <div class="container is-fullwidth">
+              <label class="checkbox">
+                <input type="checkbox" style="height: auto;" id="privacy">
+                Ich habe die <a href="/datenschutz">Datenschutzerklärung</a> gelesen
+              </label>
+            </div>
             <!--Submit-->
             <button class="button is-camilla-button is-fullwidth mt-4" id="contact-submit" onclick="sendContact(event)">
               Senden

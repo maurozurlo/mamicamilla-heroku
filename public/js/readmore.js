@@ -1,5 +1,5 @@
 const buttonText = ["Mehr lesen", "Weniger"]
-const buttonClasses = ["button", "is-outline", "my-2", "mx-0"]
+const buttonClasses = ["is-camilla-button","button", "is-outline", "my-2", "mx-0"]
 const maxLength = 1100
 
 const insertAfter = (newNode, referenceNode) => {

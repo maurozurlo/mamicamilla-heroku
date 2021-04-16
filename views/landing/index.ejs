@@ -4,16 +4,15 @@
   rel="stylesheet">
 
 <nav class="navbar is-fixed-top">
-  <main class="is-camilla-nav is-camilla-grey-background is-inactive" role="navigation" aria-label="main navigation"
-    >
+  <main class="is-camilla-nav is-camilla-grey-background is-inactive" role="navigation" aria-label="main navigation">
     <button class="is-camilla-hamburger button fixed-48px-width" onclick="toggleMainNav()">
       <i id="burger-btn-icon" class="fas fa-bars"></i>
     </button>
-    <a class="is-camilla-logo" href="/"><img  src="./assets/img/logo.svg" alt="logo"></a>
-    <% const sections=[{ label: 'Home' , href: '/' , display: true }, { label: 'Über uns' , href: '/pizzeria-berlin' , display:
-      true }, { label: 'Speisekarte' , href: '/pizza-berlin' , display: generatedPDF }, { label: 'Tischreservierung' , href: '/tisch-reservieren-berlin'
-      , display: true }, { label: 'Kontakt' , href: '/pizzeria-berlin-kontakt' , display: true }, { label: 'Admin' , href: '/admin' ,
-      display: false } ] %>
+    <a class="is-camilla-logo" href="/"><img src="./assets/img/logo.svg" alt="logo"></a>
+    <% const sections=[{ label: 'Home' , href: '/' , display: true }, { label: 'Über uns' , href: '/pizzeria-berlin' ,
+      display: true }, { label: 'Speisekarte' , href: '/pizza-berlin' , display: generatedPDF }, {
+      label: 'Tischreservierung' , href: '/tisch-reservieren-berlin' , display: true }, { label: 'Kontakt' ,
+      href: '/pizzeria-berlin-kontakt' , display: true }, { label: 'Admin' , href: '/admin' , display: false } ] %>
       <span class="is-camilla-mobile-wrapper is-inactive" id="main-nav">
         <ul class="is-camilla-nav sliding-line">
           <% sections.forEach((section)=> {
@@ -26,7 +25,14 @@
             <%}})%>
         </ul>
       </span>
-      <div class="opening-hours">Öffnungszeiten <br> 08:00 - 16:00 | 18:00 - 22:00</div>
+      <div class="opening-hours">
+        <div>
+          Hufelandstraße 36<br>10407 Berlin
+        </div>
+        <div>
+          Öffnungszeiten <br> 08:00 - 16:00 | 18:00 - 22:00
+        </div>
+      </div>
   </main>
 </nav>
 <main id="content">
