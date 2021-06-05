@@ -1,6 +1,14 @@
 const { v4: uuidv4 } = require('uuid')
 const pool = require('../config/db')
+const sanitize = require('../transformers/sanitizeHTML')
 
+const sanitizePayload = payload => {
+    const sanitized = {}
+    Object.keys(payload).forEach(key =>{
+        sanitized[key] = sanitize(payload[key])
+    })
+    return sanitized
+}
 //Common operations //booking_settings
 const getSetting = async settingName => {
     try {
@@ -81,7 +89,8 @@ const getFieldsWithId = payload => {
 }
 
 const addToDB = async (tableName, payload, connection) => {
-    const rep = getFieldsWithId(payload)
+    const sanitized = sanitizePayload(payload)
+    const rep = getFieldsWithId(sanitized)
     const stmt = `insert into ${tableName} (${rep.fields}) values (${rep.qm})`
     const [rows, fields] = await connection.execute(stmt, rep.values);
     return rows
@@ -89,7 +98,8 @@ const addToDB = async (tableName, payload, connection) => {
 
 const editInDB = async (tableName, payload, connection) => {
     const { id } = payload
-    const rep = getFieldsForUpdate(payload)
+    const sanitized = sanitizePayload(payload)
+    const rep = getFieldsForUpdate(sanitized)
     const stmt = `UPDATE ${tableName} SET ${rep.fields} WHERE id = ?`
     const [rows, fields] = await connection.execute(stmt, [...rep.values, id]);
     return rows
@@ -133,5 +143,6 @@ module.exports = {
     getGenericCount,
     getDistinctCount,
     getSetting,
+    sanitizePayload,
     updateSetting
 }

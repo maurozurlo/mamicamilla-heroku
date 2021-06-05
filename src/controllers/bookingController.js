@@ -57,7 +57,7 @@ const bookingController = {
   //Set
   addItem: async (req, res) => {
     try {
-      const result = await addToDB(tableName, req.body, pool)
+      await addToDB(tableName, req.body, pool)
       const user = req.extra ? req.extra.email : req.session.username // Required for logs
       await logger(req.session.userId, user, 'added', tableName)
       //Send booking email
@@ -70,7 +70,7 @@ const bookingController = {
   },
   editItem: async (req, res) => {
     try {
-      const result = await editInDB(tableName, req.body, pool)
+      await editInDB(tableName, req.body, pool)
       // Logger
       await logger(req.session.userId, req.session.username, 'edited', tableName)
       // Send emails
@@ -90,7 +90,7 @@ const bookingController = {
   updateBookingSettings: async (req, res) => {
     try {
       const { value } = req.body
-      const result = await updateSetting('booking_settings', value)
+      await updateSetting('booking_settings', value)
       return res.status(200).json({ message: 'Booking setting updated correctly' })
     } catch (error) {
       console.log(error)

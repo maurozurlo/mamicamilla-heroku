@@ -16,5 +16,9 @@
         "no-restricted-globals": "off",
         "no-constant-condition": "off",
         "no-fallthrough": "off"
+    },
+    "globals": {
+        "publicDir":"readonly",
+        "viewsDir": "readonly"
     }
 }

@@ -414,10 +414,6 @@ a.skip-main{
   z-index:999;
 }
 
-a.skip-main:focus, a.skip-main:active {
-
-}
-
 a{
   color: var(--camilla-green-2);
   text-decoration: 1px solid var(--camilla-green-2);

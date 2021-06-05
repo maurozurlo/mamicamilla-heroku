@@ -1,7 +1,7 @@
 const router = require('express').Router()
 const { verifyTokenOrCaptcha } = require('../middleware/auth')
 require("dotenv").config()
-const { getSetting } = require('../helpers/database')
+const { getSetting, sanitizePayload } = require('../helpers/database')
 const { sendEmail } = require('../controllers/mailer')
 const fs = require('fs')
 const { getFormattedMenu } = require('../controllers/menuController')
@@ -133,5 +133,9 @@ router.post("/api/send-contact",
       return res.status(500).json({ message: "Message couldn't be sent" })
     }
   })
+
+router.get('/test-sanitizier', (req,res) =>{
+  return res.json(sanitizePayload(req.body))
+})
 
 module.exports = router

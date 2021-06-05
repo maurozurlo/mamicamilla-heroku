@@ -13,6 +13,5 @@ module.exports = (html) => {
 			.replace(/<isindex.*>/gi, '')
 			.replace(/<meta.*>/gi, '')
 			.replace(/expression\(.*\)/gi, '')
-			.replace(/\S*@\S*\s?/gi, '')
 	)
 };
