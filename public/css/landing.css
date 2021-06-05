@@ -275,23 +275,6 @@ a.social{
   color: var(--camilla-white) !important;
 }
 
-
-.is-camilla-hero{
-  height: calc(100vh - 180px);
-  background-image: url('/assets/img/01.jpg');
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-}
-
-.is-camilla-hero-04{
-  height: calc(100vh - 180px);
-  background-image: url('/assets/img/04.jpg');
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-}
-
 .slider-outer{
   height:100% !important;
 
