@@ -1,8 +1,5 @@
 module.exports = (html) => {
-	if(!html || html === '') return ''
-	if(typeof(html) !== String) return html
-	
-	return (
+	if(typeof(html) === 'string') return (
 		html
 			.replace(/<a.*>/gi, '')
 			.replace(/<script.*>/gi, '')
@@ -17,4 +14,5 @@ module.exports = (html) => {
 			.replace(/<meta.*>/gi, '')
 			.replace(/expression\(.*\)/gi, '')
 	)
-};
+  return html
+}
