@@ -1,4 +1,6 @@
 module.exports = (html) => {
+	if(!html || html === '') return ''
+	
 	return (
 		html
 			.replace(/<a.*>/gi, '')

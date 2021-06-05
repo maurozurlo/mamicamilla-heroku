@@ -104,7 +104,7 @@ const addItemsToCategories = (categories, items) => {
         item.description += `. ${variants.amount || ''} ${variants.unit || ''}`
         //Add Img tag to mods
         item.modifiers = addImgTags(item.modifiers)
-        if (category.items === undefined) category.items = [item]
+        if (typeof(category.items) === 'undefined') category.items = [item]
         else category.items.push(item)
       }
     })
