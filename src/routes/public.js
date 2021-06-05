@@ -22,6 +22,7 @@ router.get("/", (req, res) => {
   return res.render("./landing/index",
     {
       url: req.originalUrl,
+      title: 'Leckerste, neapolitanische Pizza Berlin. Bei Mami Camilla!',
       partial: "./home",
       generatedPDF: getGeneratedPDF()
     })
@@ -68,6 +69,15 @@ router.get("/pizzeria-berlin-impressum", (req, res) => {
     {
       url: req.originalUrl,
       partial: "./imprint",
+      generatedPDF: getGeneratedPDF()
+    })
+})
+
+router.get("/sitemap", (req, res) => {
+  return res.render("./landing/index",
+    {
+      url: req.originalUrl,
+      partial: "./sitemap",
       generatedPDF: getGeneratedPDF()
     })
 })

@@ -93,6 +93,12 @@ const gatherBookingData = () => {
     hcaptcha: captchaResponse
   }
   // Validation
+  //Privacy
+  if(!document.getElementById('privacy').checked){
+    alert('Bitte bestätigen Sie, dass Sie die Datenschutzerklärung gelesen haben.')
+    return {}
+  }
+
   if (checkIfEmpty(bookingFName, 'Bitte geben Sie Ihren Namen an')) return {}
   if (checkIfEmpty(bookingLName, 'Bitte geben Sie Ihren Namen an')) return {}
   if (checkIfNotPhone(bookingPhone)) return {}

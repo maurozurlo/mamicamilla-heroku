@@ -34,6 +34,12 @@ const gatherContactData = () => {
     hcaptcha: captchaResponse
   }
   // Validation
+  //Privacy
+  if(!document.getElementById('privacy').checked){
+    alert('Bitte bestätigen Sie, dass Sie die Datenschutzerklärung gelesen haben.')
+    return {}
+  }
+
   if (checkIfEmpty(contactName, 'Bitte geben Sie Ihren Namen an')) return {}
   if (checkIfNotEmail(contactEmail)) return {}
   if (checkIfEmpty(contactMessage, 'Bitte geben Sie Ihre Nachricht ein')) return {}

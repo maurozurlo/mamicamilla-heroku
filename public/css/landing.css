@@ -87,11 +87,17 @@ main.is-camilla-nav {
 
 .opening-hours{
   font-size: 80%;
-  display: flex;
-  min-width: 160px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 5px;
   align-items: center;
-  justify-content: center;
   text-align: center;
+}
+
+.opening-hours>div:nth-of-type(1){
+  padding-right: 5px;
+  border-right: 1px solid rgba(255,255,255,.3);
 }
 
 ul.is-camilla-nav {
@@ -480,7 +486,7 @@ a.hover:hover{
     background-color: var(--camilla-white);
   }
   #social-container.invert a.social{
-    color: var(--camilla-green);
+    color: var(--camilla-green) !important;
   }
 
   #social-container.static{
@@ -535,7 +541,7 @@ a.hover:hover{
     margin-bottom: 10px;
   }
 
-  .is-camilla-mobile-wrapper > ul > li > a{
+  .is-camilla-nav a.hover{
     color: var(--camilla-grey);
     font-weight: bold;
   }
