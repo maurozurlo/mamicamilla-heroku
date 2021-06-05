@@ -1,5 +1,6 @@
 module.exports = (html) => {
 	if(!html || html === '') return ''
+	if(typeof(html) !== String) return html
 	
 	return (
 		html
